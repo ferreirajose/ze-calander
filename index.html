@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ze Calander</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="material.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="default.css">
+
+</head>
+
+<body>
+
+    <div id="style">
+        <button class="btn btn-material" onclick="changeStyle({ material: true })">Material Style</button>
+        <button class="btn btn-bootstrap" onclick="changeStyle({ bootstrap: true })">Bootstrap Style</button>
+        <button class="btn btn-default" onclick="changeStyle()">Default Style</button>
+    </div>
+
+    <div class="wrapper">
+        <header class="header">
+            <p data-test="current-date" data-test="current-date" class="current-date">October 2024</p>
+            <div class="icons" data-test="icons">
+                <div class="btn today">
+                    <span class="material-symbols-rounded">
+                        calendar_today
+                    </span>
+                </div>
+                <span id="prev" class="nav material-symbols-rounded">chevron_left</span>
+                <span id="next" class="nav material-symbols-rounded">chevron_right</span>
+            </div>
+        </header>
+        <div class="calendar" data-test="calendar">
+            <ul class="list-weeks" data-test="list-weeks">
+                <li class="list-item-weeks">Sun</li>
+                <li class="list-item-weeks">Mon</li>
+                <li class="list-item-weeks">Tue</li>
+                <li class="list-item-weeks">Wed</li>
+                <li class="list-item-weeks">Thu</li>
+                <li class="list-item-weeks">Fri</li>
+                <li class="list-item-weeks">Sat</li>
+            </ul>
+            <ul class="list-days" data-test="list-days">
+                
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
