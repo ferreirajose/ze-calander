@@ -1,0 +1,112 @@
+body {
+    background-color: #e0e0e0; /* Background mais claro seguindo o material design */
+}
+ 
+.wrapper.material-style {
+    width: 450px;
+    background-color: #fff; /* Fundo branco para o container */
+    border-radius: 8px; /* Borda levemente arredondada */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve para elevação */
+    transition: box-shadow 0.3s ease;
+}
+
+.wrapper.material-style:hover {
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+.wrapper.material-style .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px 10px;
+    background-color: #6200ea; /* Cor primária do Material Design */
+    color: white;
+}
+
+.wrapper.material-style .header .icons {
+    display: flex;
+}
+
+.wrapper.material-style .current-date {
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: white;
+}
+
+.wrapper.material-style .icons span {
+    width: 38px;
+    height: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    color: white; /* Ícones brancos */
+    font-size: 1.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.wrapper.material-style .icons .today {
+    margin-right: 30px;
+    border-radius: 50%; /* Ícones com bordas arredondadas */
+    background-color: #bb86fc;
+    color: white;
+}
+
+.wrapper.material-style .icons .nav:hover {
+    background-color: #3700b3; /* Cor de hover mais escura */
+}
+
+.wrapper.material-style .icons .nav:last-child {
+    margin-right: -10px;
+}
+
+.wrapper.material-style .calendar {
+    padding: 20px;
+    background-color: white;
+}
+
+.wrapper.material-style .calendar .list-weeks .list-item-weeks {
+    font-weight: 500;
+    color: #757575; /* Cor de texto secundário */
+}
+
+.wrapper.material-style .calendar .list-days .list-item-days {
+    height: 45px;
+    width: 45px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%; /* Borda arredondada para os dias */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.wrapper.material-style .calendar .list-days .inactive {
+    color: #bdbdbd; /* Cinza claro para dias inativos */
+}
+
+.wrapper.material-style .calendar .list-days .active {
+    color: white;
+    background-color: #6200ea; /* Cor primária para o dia ativo */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombras para destacar o dia ativo */
+}
+
+.wrapper.material-style .calendar 
+.list-weeks,
+.list-days {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper.material-style .calendar 
+.list-item-days,
+.list-item-weeks {
+    width: calc(100% / 7);   
+    position: relative;
+}
+
+.wrapper.material-style .calendar .list-item-days:hover {
+    background-color: #eeeeee; /* Cor mais clara ao passar o mouse */
+    color: #181616;
+}

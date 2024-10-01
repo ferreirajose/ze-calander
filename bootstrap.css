@@ -1,0 +1,109 @@
+body {
+    background-color: #f8f9fa; /* Fundo claro padrão do Bootstrap */
+}
+
+.wrapper.bootstrap-style {
+    width: 450px;
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #dee2e6; /* Borda leve */
+    border-radius: 0.25rem; /* Borda arredondada, padrão do Bootstrap */
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.wrapper.bootstrap-style .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px 10px;
+    background-color: #007bff; /* Cor primária do Bootstrap (azul) */
+    color: white;
+    border-radius: 0.25rem 0.25rem 0 0; /* Borda arredondada só no topo */
+}
+
+.wrapper.bootstrap-style .header .icons {
+    display: flex;
+}
+
+.wrapper.bootstrap-style .current-date {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+}
+
+.wrapper.bootstrap-style .icons span {
+    width: 38px;
+    height: 38px;
+    margin: 0 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    color: white;
+    font-size: 1.5rem;
+    background-color: #6c757d; /* Cor secundária do Bootstrap */
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.wrapper.bootstrap-style .icons span:hover {
+    background-color: #5a6268; /* Cor mais escura ao passar o mouse */
+}
+
+.wrapper.bootstrap-style .icons .today {
+    margin-right: 20px;
+}
+
+.wrapper.bootstrap-style .calendar {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem; /* Borda arredondada */
+}
+
+.wrapper.bootstrap-style .calendar .list-weeks .list-item-weeks {
+    font-weight: 500;
+    color: #6c757d; /* Cor secundária do Bootstrap para texto */
+}
+
+.wrapper.bootstrap-style .calendar .list-days .list-item-days {
+    height: 45px;
+    width: 45px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px; /* Borda arredondada para os dias */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.wrapper.bootstrap-style .calendar .list-days .inactive {
+    color: #ced4da; /* Cor cinza para dias inativos */
+}
+
+.wrapper.bootstrap-style .calendar .list-days .active {
+    color: white;
+    background-color: #007bff; /* Cor primária do Bootstrap */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.wrapper.bootstrap-style .calendar 
+.list-weeks,
+.list-days {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper.bootstrap-style .calendar 
+.list-item-days,
+.list-item-weeks {
+    width: calc(100% / 7);   
+    position: relative;
+}
+
+.wrapper.bootstrap-style .calendar .list-item-days:hover {
+    background-color: #f8f9fa; /* Cor de hover seguindo o padrão Bootstrap */
+    border-color: #6c757d; /* Borda mais clara no hover */
+    color: #181616;
+
+}
