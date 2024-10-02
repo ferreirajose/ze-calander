@@ -8,9 +8,13 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="material.css">
+    <!-- <link rel="stylesheet" href="material.css">
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="style-tce.css">
+    <link rel="stylesheet" href="default.css"> -->
+
+    <link rel="stylesheet" href="style-base.css">
+    <link rel="stylesheet" href="style-tce-v2.css">
 
 </head>
 
@@ -19,14 +23,16 @@
     <div id="style">
         <button class="btn btn-material" onclick="changeStyle({ material: true })">Material Style</button>
         <button class="btn btn-bootstrap" onclick="changeStyle({ bootstrap: true })">Bootstrap Style</button>
+        <button class="btn btn-tce" onclick="changeStyle({ tce: true })">TCE Style</button>
         <button class="btn btn-default" onclick="changeStyle()">Default Style</button>
     </div>
 
-    <div class="wrapper">
+    <!-- <div class="wrapper default-style">
         <header class="header">
             <p data-test="current-date" data-test="current-date" class="current-date">October 2024</p>
             <div class="icons" data-test="icons">
                 <div class="btn today">
+                    <p>Hoje</p>
                     <span class="material-symbols-rounded">
                         calendar_today
                     </span>
@@ -45,12 +51,49 @@
                 <li class="list-item-weeks">Fri</li>
                 <li class="list-item-weeks">Sat</li>
             </ul>
-            <ul class="list-days" data-test="list-days">
+            <ul class="list-days" data-test="list-days"></ul>
+        </div>
+    </div> -->
+
+    <div class="datetime-calendar">
+        <div class="calendar-header">
+            <div class="calendar-action-buttons" >
+                <div class="calendar-month-year">
+                    <p data-test="current-date" data-test="current-date" class="current-date">October 2024</p>
+                </div>
                 
-            </ul>
+                <div class="calendar-today today">
+                    <p class="today-text">Hoje</p>
+                    <span class="material-symbols-rounded">calendar_today</span>
+                </div>
+
+                <div class="calendar-next-prev" data-test="icons">
+                    <span id="prev" class="nav material-symbols-rounded">chevron_left</span>
+                    <span id="next" class="nav material-symbols-rounded">chevron_right</span>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="calendar-days-of-week">
+            <div class="day-of-week">Sum</div>
+            <div class="day-of-week">Mon</div>
+            <div class="day-of-week">Tue</div>
+            <div class="day-of-week">Wed</div>
+            <div class="day-of-week">Thu</div>
+            <div class="day-of-week">Fri</div>
+            <div class="day-of-week">Sat</div>
+        </div>
+        <div class="calendar-body">
+            <div class="calendar-month">
+                <div class="calendar-month-grid">
+                </div>
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="test.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>
