@@ -1,6 +1,6 @@
 const currentDate = document.querySelector('.current-date');
-const daysTag = document.querySelector('.list-days');
-const prevNextIcon = document.querySelectorAll('.icons span');
+const daysTag = document.querySelector('.calendar-month-grid');
+const prevNextIcon = document.querySelectorAll('.calendar-next-prev span');
 const todayBtn = document.querySelector(".today");
 
 let date = new Date();
@@ -100,7 +100,7 @@ const renderCalendar = () => {
     daysTag.innerHTML = liTag;
 
     // Aplica os estilos dos eventos
-    applyEventStyles();
+    //applyEventStyles();
 }
 
 const applyEventStyles = () => {
@@ -158,24 +158,24 @@ todayBtn.addEventListener("click", () => {
     renderCalendar();
 });
 
-function changeStyle(styleConfig = { default: true }) {
-    const wrapper = document.querySelector('.wrapper');
+// function changeStyle(styleConfig = { default: true }) {
+//     const wrapper = document.querySelector('.wrapper');
 
-    // Remove todas as classes de estilo existentes
-    wrapper.classList.remove('material-style', 'bootstrap-style', 'tce-style', 'default-style');
+//     // Remove todas as classes de estilo existentes
+//     wrapper.classList.remove('material-style', 'bootstrap-style', 'tce-style', 'default-style');
 
-    // Verifica o estilo a ser aplicado com base no parâmetro
-    if (styleConfig.material) {
-        wrapper.classList.add('material-style');
-    } else if (styleConfig.bootstrap) {
-        wrapper.classList.add('bootstrap-style');
-    } else if (styleConfig.tce) {
-        wrapper.classList.add('tce-style');
-    } else {
-        // Aplica o estilo default se não houver outro valor informado
-        wrapper.classList.add('default-style');
-    }
-}
+//     // Verifica o estilo a ser aplicado com base no parâmetro
+//     if (styleConfig.material) {
+//         wrapper.classList.add('material-style');
+//     } else if (styleConfig.bootstrap) {
+//         wrapper.classList.add('bootstrap-style');
+//     } else if (styleConfig.tce) {
+//         wrapper.classList.add('tce-style');
+//     } else {
+//         // Aplica o estilo default se não houver outro valor informado
+//         wrapper.classList.add('default-style');
+//     }
+// }
 
 
 

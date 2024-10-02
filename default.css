@@ -1,27 +1,27 @@
 
  
-.wrapper {
+.wrapper.default-style {
     width: 450px;
     background-color: white;
 }
 
-.wrapper .header {
+.wrapper.default-style .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 25px 30px 10px;
 }
 
-.header .icons {
+.wrapper.default-style .header .icons {
     display: flex
 }
 
-.wrapper .current-date {
+.wrapper.default-style .current-date {
     font-size: 1.45rem;
     font-weight: 500;
 }
 
-.wrapper .icons span {
+.wrapper.default-style .icons span {
     width: 38px;
     height: 38px;
     margin: 0 1px;
@@ -32,44 +32,44 @@
     font-size: 1.9rem;
 }
 
-.wrapper .icons .today {
+.wrapper.default-style .icons .today {
     margin-right: 30px;
     border-radius: 0;
 }
 
-.wrapper .icons .nav:hover {
+.wrapper.default-style .icons .nav:hover {
     background-color: #F2F2F2;
 }
 
-.wrapper .icons .nav:last-child {
+.wrapper.default-style .icons .nav:last-child {
     margin-right: -10px;
 }
 
-.calendar {
+.wrapper.default-style .calendar {
     padding: 20px;
 }
 
-.calendar .list-weeks .list-item-weeks {
+.wrapper.default-style .calendar .list-weeks .list-item-weeks {
     font-weight: 500;
 }
 
-.calendar .list-days .list-item-days {
+.wrapper.default-style .calendar .list-days .list-item-days {
     height: 45px;
     width: 45px;
     padding: 10px;
     cursor: pointer;
 }
 
-.calendar .list-days .inactive {
+.wrapper.default-style .calendar .list-days .inactive {
     color: #AAA;
 }
 
-.calendar .list-days .active {
+.wrapper.default-style .calendar .list-days .active {
     color: #fff;
     background: #9b59b6;
 }
 
-.calendar 
+.wrapper.default-style .calendar 
 .list-weeks,
 .list-days{
     display: flex;
@@ -79,7 +79,7 @@
     margin-bottom: 20px;
 }
 
-.calendar 
+.wrapper.default-style .calendar 
 .list-item-days,
 .list-item-weeks {
     width: calc(100% / 7);   
@@ -87,7 +87,7 @@
 }
 
 /* HOVER NAS DATAS*/
-.calendar 
+.wrapper.default-style .calendar 
 .list-item-days:hover {
     background-color: #F2F2F2;
     color: #181616;
