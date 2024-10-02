@@ -37,6 +37,7 @@
     color:  gray;
     font-size: 0.875rem;
     line-height: 36px;
+    margin: 10px 0 15px;
 }
 
 .calendar-days-of-week .day-of-week {
@@ -101,7 +102,7 @@
     overflow: visible;
 }
 
-.list-item-days {
+.calendar-day {
     width: 42px;
     min-width: 42px;
     height: 42px;
@@ -136,4 +137,8 @@
     -moz-appearance: none;
     appearance: none;
     z-index: 0;
+}
+
+.calendar-day-wrapper.inactive {
+    color: #ced4da; /* Cor cinza para dias inativos */
 }

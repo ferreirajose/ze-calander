@@ -12,8 +12,6 @@ const months = [
     "July", "August", "September", "October", "November", "December"
 ];
 
-// border: '2px solid #003D67'
-
 const listEvents = [
     {
         date: '2024-10-02',
@@ -83,32 +81,38 @@ const renderCalendar = () => {
     let liTag = "";
 
     for (let index = firstDateofMonth; index > 0; index--) {
-        liTag += `<li class="list-item-days inactive">${lastDateofLastMonth - index + 1}</li>`;
+        liTag += `<div class="calendar-day-wrapper inactive">
+            <span class="calendar-day">${lastDateofLastMonth - index + 1}</span>
+        </div>`;
     }
 
     for (let index = 1; index <= lastDateofMonth; index++) {
         let isToday = index === date.getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear() ? 'active' : '';
         let fullDate = `${currentYear}-${(currentMonth + 1).toString().padStart(2, '0')}-${index.toString().padStart(2, '0')}`;
-        liTag += `<li class="list-item-days ${isToday}" data-date="${fullDate}">${index}</li>`;
+        liTag += `<div class="calendar-day-wrapper ${isToday}">
+        <span class="calendar-day" data-date="${fullDate}">${index}</span>
+        </div>`;
     }
 
     for (let index = lastDayofMonth; index < 6; index++) {
-        liTag += `<li class="list-item-days inactive">${index - lastDayofMonth + 1}</li>`;
+        liTag += `<div class="calendar-day-wrapper inactive">
+            <span class="calendar-day">${index - lastDayofMonth + 1}</span>
+        </div>`;
     }
 
     currentDate.innerText = `${months[currentMonth]} ${currentYear}`;
     daysTag.innerHTML = liTag;
 
     // Aplica os estilos dos eventos
-    //applyEventStyles();
+    applyEventStyles();
 }
 
 const applyEventStyles = () => {
-    const dayElements = document.querySelectorAll('.list-item-days');
+    const dayElements = document.querySelectorAll('.calendar-day-wrapper .calendar-day');
 
     dayElements.forEach(day => {
         const dayDate = day.getAttribute('data-date');
-        listEvents.forEach(event => {
+        (listEvents || []).forEach(event => {
             if (event.date === dayDate) {
                 day.style.color = event.textColor;
                 day.style.backgroundColor = event.backgroundColor;
@@ -118,23 +122,23 @@ const applyEventStyles = () => {
     });
 }
 
-function applyDynamicStyles(datesWithStyle) {
-    const dayElements = document.querySelectorAll('.list-item-days');
+// function applyDynamicStyles(datesWithStyle) {
+//     const dayElements = document.querySelectorAll('.list-item-days');
     
-    // Percorre todos os dias renderizados
-    dayElements.forEach(day => {
-        const dayDate = day.innerText;  // Captura o número do dia
+//     // Percorre todos os dias renderizados
+//     dayElements.forEach(day => {
+//         const dayDate = day.innerText;  // Captura o número do dia
 
-        // Verifica se existe uma correspondência de estilo para o dia atual
-        datesWithStyle.forEach(event => {
-            const eventDate = new Date(event.date).getDate().toString(); // Extrai o número do dia do evento
-            if (eventDate === dayDate) {
-                // Aplica as classes de estilo dinamicamente
-                day.classList.add(event.styleClass);
-            }
-        });
-    });
-}
+//         // Verifica se existe uma correspondência de estilo para o dia atual
+//         datesWithStyle.forEach(event => {
+//             const eventDate = new Date(event.date).getDate().toString(); // Extrai o número do dia do evento
+//             if (eventDate === dayDate) {
+//                 // Aplica as classes de estilo dinamicamente
+//                 day.classList.add(event.styleClass);
+//             }
+//         });
+//     });
+// }
 
 prevNextIcon.forEach(icon => {
     icon.addEventListener('click', () => {
@@ -158,24 +162,24 @@ todayBtn.addEventListener("click", () => {
     renderCalendar();
 });
 
-// function changeStyle(styleConfig = { default: true }) {
-//     const wrapper = document.querySelector('.wrapper');
+function changeStyle(styleConfig = { default: true }) {
+    const wrapper = document.querySelector('.datetime-calendar');
 
-//     // Remove todas as classes de estilo existentes
-//     wrapper.classList.remove('material-style', 'bootstrap-style', 'tce-style', 'default-style');
+    // Remove todas as classes de estilo existentes
+    wrapper.classList.remove('material-style', 'bootstrap-style', 'tce-style', 'default-style');
 
-//     // Verifica o estilo a ser aplicado com base no parâmetro
-//     if (styleConfig.material) {
-//         wrapper.classList.add('material-style');
-//     } else if (styleConfig.bootstrap) {
-//         wrapper.classList.add('bootstrap-style');
-//     } else if (styleConfig.tce) {
-//         wrapper.classList.add('tce-style');
-//     } else {
-//         // Aplica o estilo default se não houver outro valor informado
-//         wrapper.classList.add('default-style');
-//     }
-// }
+    // Verifica o estilo a ser aplicado com base no parâmetro
+    if (styleConfig.material) {
+        wrapper.classList.add('material-style');
+    } else if (styleConfig.bootstrap) {
+        wrapper.classList.add('bootstrap-style');
+    } else if (styleConfig.tce) {
+        wrapper.classList.add('tce-style');
+    } else {
+        // Aplica o estilo default se não houver outro valor informado
+        wrapper.classList.add('default-style');
+    }
+}
 
 
 
