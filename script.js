@@ -2,7 +2,7 @@ const currentDate = document.querySelector('.current-date');
 const daysTag = document.querySelector('.list-days');
 const prevNextIcon = document.querySelectorAll('.icons span');
 const todayBtn = document.querySelector(".today");
-
+let isRange = true;
 let date = new Date();
 let currentYear = date.getFullYear();
 let currentMonth = date.getMonth();
@@ -83,17 +83,17 @@ const renderCalendar = () => {
     let liTag = "";
 
     for (let index = firstDateofMonth; index > 0; index--) {
-        liTag += `<li class="list-item-days inactive">${lastDateofLastMonth - index + 1}</li>`;
+        liTag += `<li class="list-item-days inactive"><span class="day">${lastDateofLastMonth - index + 1}</span></li>`;
     }
 
     for (let index = 1; index <= lastDateofMonth; index++) {
         let isToday = index === date.getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear() ? 'active' : '';
         let fullDate = `${currentYear}-${(currentMonth + 1).toString().padStart(2, '0')}-${index.toString().padStart(2, '0')}`;
-        liTag += `<li class="list-item-days ${isToday}" data-date="${fullDate}">${index}</li>`;
+        liTag += `<li class="list-item-days ${isToday}" data-date="${fullDate}"><span class="day" data-date="${fullDate}">${index}</span</li>`;
     }
 
     for (let index = lastDayofMonth; index < 6; index++) {
-        liTag += `<li class="list-item-days inactive">${index - lastDayofMonth + 1}</li>`;
+        liTag += `<li class="list-item-days inactive"><span class="day">${index - lastDayofMonth + 1}</span></li>`;
     }
 
     currentDate.innerText = `${months[currentMonth]} ${currentYear}`;
@@ -101,22 +101,57 @@ const renderCalendar = () => {
 
     // Aplica os estilos dos eventos
     applyEventStyles();
+    applyDateRangeStyles('2024-10-01', '2024-10-05');
+
 }
 
 const applyEventStyles = () => {
-    const dayElements = document.querySelectorAll('.list-item-days');
+    if (isRange) {
+        const dayElements = document.querySelectorAll('.list-item-days .day');
 
-    dayElements.forEach(day => {
-        const dayDate = day.getAttribute('data-date');
-        listEvents.forEach(event => {
-            if (event.date === dayDate) {
-                day.style.color = event.textColor;
-                day.style.backgroundColor = event.backgroundColor;
-                day.style.border = event.border;
+        dayElements.forEach(day => {
+            const dayDate = day.getAttribute('data-date');
+            listEvents.forEach(event => {
+                if (event.date === dayDate) {
+                    day.style.color = event.textColor;
+                    day.style.backgroundColor = event.backgroundColor;
+                    day.style.border = event.border;
+                }
+            });
+        });
+    }
+}
+
+// Função para aplicar o estilo do intervalo de datas
+const applyDateRangeStyles = (startDate, endDate) => {
+    if (!isRange) {        
+        const dayElements = document.querySelectorAll('.list-item-days');
+        
+        let startFound = false;
+
+        dayElements.forEach(day => {
+            const dayDate = day.getAttribute('data-date');
+            
+            // Limpar classes antigas de seleção
+            day.classList.remove('startSelection', 'endSelection', 'inRange');
+
+            // Verifica se a data atual é o início ou o fim do range
+            if (dayDate === startDate) {
+                day.classList.add('startSelection');
+                startFound = true;
+            } else if (dayDate === endDate) {
+                day.classList.add('endSelection');
+                startFound = false;
+            }
+
+            // Adiciona classe de intervalo para os dias entre start e end
+            if (startFound && dayDate !== startDate) {
+                day.classList.add('inRange');
             }
         });
-    });
+    }
 }
+
 
 function applyDynamicStyles(datesWithStyle) {
     const dayElements = document.querySelectorAll('.list-item-days');
@@ -177,6 +212,20 @@ function changeStyle(styleConfig = { default: true }) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.querySelector('input[type="checkbox"]');
+  
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        isRange = true;
+        renderCalendar();
+
+      } else {
+        isRange = false;
+        renderCalendar();
+      }
+    });
+  });
 
 
 renderCalendar();

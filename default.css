@@ -54,17 +54,14 @@
 }
 
 .wrapper.default-style .calendar .list-days .list-item-days {
-    height: 45px;
-    width: 45px;
-    padding: 10px;
     cursor: pointer;
-}
+} 
 
-.wrapper.default-style .calendar .list-days .inactive {
+.wrapper.default-style .calendar .list-days .inactive .day{
     color: #AAA;
 }
 
-.wrapper.default-style .calendar .list-days .active {
+.wrapper.default-style .calendar .list-days .active .day{
     color: #fff;
     background: #9b59b6;
 }
@@ -88,7 +85,7 @@
 
 /* HOVER NAS DATAS*/
 .wrapper.default-style .calendar 
-.list-item-days:hover {
+.list-item-days:hover .day {
     background-color: #F2F2F2;
     color: #181616;
 } 
