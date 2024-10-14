@@ -52,6 +52,11 @@ body {
     color: white;
 }
 
+
+.wrapper.material-style .icons .today .today-text{
+    display: none;
+}
+
 .wrapper.material-style .icons .nav:hover {
     background-color: #3700b3; /* Cor de hover mais escura */
 }

@@ -53,6 +53,10 @@ body {
     margin-right: 20px;
 }
 
+.wrapper.bootstrap-style .icons .today .today-text {
+    display: none;
+}
+
 .wrapper.bootstrap-style .calendar {
     padding: 20px;
     background-color: white;
