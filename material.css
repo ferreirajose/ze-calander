@@ -75,14 +75,6 @@ body {
     color: #757575; /* Cor de texto secundário */
 }
 
-.wrapper.material-style .calendar .list-days .list-item-days {
-    height: 45px;
-    width: 45px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%; /* Borda arredondada para os dias */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
 .wrapper.material-style .calendar .list-days .inactive {
     color: #bdbdbd; /* Cinza claro para dias inativos */
@@ -111,7 +103,32 @@ body {
     position: relative;
 }
 
+.wrapper.material-style .calendar .list-item-days .day{
+    border-radius: 0;
+}
+
+ 
+.wrapper.material-style .calendar .list-item-days.startSelection .day,
+.wrapper.material-style .calendar .list-item-days.endSelection .day {
+    background-color: #6200ea;
+}
+
 .wrapper.material-style .calendar .list-item-days:hover {
-    background-color: #eeeeee; /* Cor mais clara ao passar o mouse */
+    background-color: #eeeeee;  /** Cor mais clara ao passar o mouse */
     color: #181616;
 }
+
+.wrapper.material-style .calendar .inRange .day{
+    background-color: #6200ea;
+
+}
+
+.wrapper.material-style .startSelection::before {
+    right: 0;
+    background-color: #6200ea;
+}
+
+.wrapper.material-style .endSelection::before {
+    left: 0;
+    background-color: #6200ea;
+} 

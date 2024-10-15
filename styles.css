@@ -142,10 +142,14 @@
 /* fim */ 
 
 
+.wrapper {
+    margin: 0 auto;
+}
+
 /* ESITLO RESPONSAVEL POR APLICAR O RANGER DE DATAS */
 .wrapper .calendar 
 .list-item-days {
-    border-radius: 36px;
+    /* border-radius: 36px; */
     width: 36px;
     display: block;
     margin: 0 auto 10px;

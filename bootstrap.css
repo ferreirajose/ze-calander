@@ -69,15 +69,6 @@ body {
     color: #6c757d; /* Cor secundária do Bootstrap para texto */
 }
 
-.wrapper.bootstrap-style .calendar .list-days .list-item-days {
-    height: 45px;
-    width: 45px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 10px; /* Borda arredondada para os dias */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 .wrapper.bootstrap-style .calendar .list-days .inactive {
     color: #ced4da; /* Cor cinza para dias inativos */
 }
@@ -104,6 +95,11 @@ body {
     width: calc(100% / 7);   
     position: relative;
 }
+
+
+/* .wrapper.bootstrap-style .calendar .list-item-days .day{
+    border-radius: 10px;
+} */
 
 .wrapper.bootstrap-style .calendar .list-item-days:hover {
     background-color: #f8f9fa; /* Cor de hover seguindo o padrão Bootstrap */

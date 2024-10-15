@@ -82,10 +82,3 @@
     width: calc(100% / 7);   
     position: relative;
 }
-
-/* HOVER NAS DATAS*/
-.wrapper.default-style .calendar 
-.list-item-days:hover .day {
-    background-color: #F2F2F2;
-    color: #181616;
-} 
